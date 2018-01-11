@@ -50,11 +50,12 @@ already be set up for you.
 If you are not using the template, we recommend you install this as a submodule
 so you get any updates to the extension.
 
-1. `cd` to the `docs/_extensions/` directory in your repo.
+1. `cd` to the `docs/_extensions/` directory in your repo
 2. Add this repo as a submodule: `git submodule add
    https://github.com/m-renaud/haddock-autolink`
 3. Add the extension path in your `conf.py` file:
    `sys.path.insert(0, os.path.abspath('.') + '/_extensions/haddock-autolink')`
+4. Add `'haddock-autolink'` to the `extensions` list in `conf.py`
 
 When cloning your repo in the future use `git clone --recurse-submodules
 https://github.com/YOUR_USER/YOUR_REPO.git`, the `--recurse-submodules` flag
