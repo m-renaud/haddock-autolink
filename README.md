@@ -66,7 +66,16 @@ docs](https://git-scm.com/book/en/v2/Git-Tools-Submodules).
 ## Other Haddock Hosting Options
 
 This autolinker supports linking to non-Hackage documentation, currently
-Stackage and local docs are supported.
+Stackage and local docs are supported. You can control this by setting
+environment variables when building the docs:
+
+```shell
+make -e <env_variables> html
+
+# Hackage is the default so the following two are equivalent:
+make html
+make -e HADDOCK_HOST=hackage html
+```
 
 ### Linking to Stackage
 
@@ -77,6 +86,10 @@ the documentation:
 - `STACKAGE_RESOLVER=<resolver>` where `<resolver>` is the Stackage resolver you
   want to link to (for example, `lts-10.0`)
 
+```shell
+make -e HADDOCK_HOST=stackage STACKAGE_RESOLVER=lts-10.0 html
+```
+
 
 ### Linking to local docs
 
@@ -84,3 +97,7 @@ You can also link to locally hosted Haddocks by setting:
 
 - `HADDOCK_HOST=local`
 - `HADDOCK_DIR=<path-to-haddock-root>` (for example `file:///path/to/haddocks/`)
+
+```shell
+make -e HADDOCK_HOST=local HADDOCK_DIR=file:///usr/local/docs/haddocks/
+```
