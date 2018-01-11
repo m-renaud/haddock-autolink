@@ -43,11 +43,24 @@ of the `package-name/Module.Name#identifier` and instead just put
 
 ## Installing the extension
 
-If you are using the [Haskell Package ReadTheDocs template]() all you need to do is
-initialize the already set-up submodule in the `_extensions` directory.
+If you are using the [Haskell Package ReadTheDocs
+template](https://github.com/m-renaud/haskell-rtd-template) then everything will
+already be set up for you.
 
 If you are not using the template, we recommend you install this as a submodule
 so you get any updates to the extension.
+
+1. `cd` to the `docs/_extensions/` directory in your repo.
+2. Add this repo as a submodule: `git submodule add
+   https://github.com/m-renaud/haddock-autolink`
+3. Add the extension path in your `conf.py` file:
+   `sys.path.insert(0, os.path.abspath('.') + '/_extensions/haddock-autolink')`
+
+When cloning your repo in the future use `git clone --recurse-submodules
+https://github.com/YOUR_USER/YOUR_REPO.git`, the `--recurse-submodules` flag
+will automatically pull down any submodules (including this one). For more info
+see the [Git submodules
+docs](https://git-scm.com/book/en/v2/Git-Tools-Submodules).
 
 
 ## Other Haddock Hosting Options
