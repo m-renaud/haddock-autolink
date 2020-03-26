@@ -35,10 +35,10 @@ def setup(app):
     app.add_role('haddock_short', haddock_autolinker.haddock_role(True))
 
     # Print info about Haddock link generation.
-    print '\nHaddock host information'
-    print '  haddoc_host: ' + haddock_host
-    print '  haddock_root: ' + haddock_root
-    print
-    print '  Links to docs will be of the form: ' + \
-        haddock_ref(haddock_host, haddock_root, 'pkg-name', 'Module-Name', 'funcName')
+    print('\nHaddock host information')
+    print('  haddoc_host: ' + haddock_host)
+    print('  haddock_root: ' + haddock_root)
+    print()
+    print('  Links to docs will be of the form: ' + \
+        haddock_ref(haddock_host, haddock_root, 'pkg-name', 'Module-Name', 'funcName'))
 

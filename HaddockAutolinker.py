@@ -13,7 +13,7 @@ def print_error(err_string):
 
     FAIL = '\033[91m'
     ENDC = '\033[0m'
-    print FAIL + err_string + ENDC
+    print(FAIL + err_string + ENDC)
 
 
 def get_project(inliner):
